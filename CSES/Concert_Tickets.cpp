@@ -1,5 +1,3 @@
-// TLE :(
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,32 +5,27 @@ using namespace std;
 #define ull unsigned long long
 
 void solve() {
-    int n, m;
+    int n, m, x;
 
     cin >> n >> m;
 
-    vector<int> vn(n + 1);
+    multiset<int> vn;
 
     for(int i = 0; i < n; i++) {
-        cin >> vn[i];
+        cin >> x;
+        vn.insert(x);
     }
 
-    vn[n] = -1;
-
-    sort(vn.begin(), vn.end());
-
     for(int i = 0; i < m; i++) {
-        int x;
-
         cin >> x;
 
-        for(int i = n; i >= 0; i--) {
-            if(vn[i] <= x) {
-                cout << vn[i] << '\n';
-                vn[i] = -1;
-                sort(vn.begin(), vn.end());
-                break;
-            }
+        auto it = vn.upper_bound(x);
+
+        if(it != vn.begin()) {
+            cout << *(--it) << '\n';
+            vn.erase(it);
+        } else {
+            cout << -1 << '\n';
         }
     }
 }
