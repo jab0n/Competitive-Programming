@@ -1,4 +1,3 @@
 *.json
 *.txt
-.gitignore
 bin_*
