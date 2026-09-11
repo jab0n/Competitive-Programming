@@ -1,3 +1,5 @@
 *.json
 *.txt
-bin_*
+Bin_*
+Test.cpp
+Base.cpp
