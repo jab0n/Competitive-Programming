@@ -6,39 +6,38 @@ using namespace std;
 
 const int MOD = 1e9 + 7;
 
-char p;
-int n, m, c;
+int rookie(int n, int m) {
+    return min(n, m);
+}
 
-vector<vector<bool>> mk_in(n, vector<bool> (m, 1));
-
-void knight(vector<vector<bool>> mk, int con) {
+int knight(int n, int m) {
     
 }
 
-void queen(vector<vector<bool>> mk, int con) {
+int queen(int n, int m) {
 
 }
 
-void king(vector<vector<bool>> mk, int con) {
-
+int king(int n, int m) {
+    
 }
 
 void solve() {
+    char p;
+    int n, m;
+
     cin >> p >> n >> m;
 
-    c = 0;
-
     if(p == 'r') {
-        c = max(n, m);
+        cout << rookie(n , m) << '\n';
     } else if(p == 'k') {
-        knight(mk_in, 0);
+        cout << knight(n , m) << '\n';
     } else if(p == 'Q') {
-        queen(mk_in, 0);
+        cout << queen(n , m) << '\n';
     } else {
-        king(mk_in, 0);
+        cout << king(n , m) << '\n';
     }
 
-    cout << c << '\n';
 }
 
 int main() {
